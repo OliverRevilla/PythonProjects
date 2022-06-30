@@ -58,9 +58,21 @@ class Exercises:
                 d.remove(word)
         print([d,c])
 
+#Given a string consisting of whitespace and groups of matched parentheses,
+# write a Python program to split it into groups of perfectly matched parentheses
+# without any whitespace.
 
-Exercises.exercise_eight("The dance, held in the school gym, ended at midnight.")
+    def exercise_ten(string_list):
+        match = ''
+        matches = []
+        for c in string_list.replace(" ",""):
+           match = match + c
+           if match.count('(') == match.count(')'):
+                matches.append(match)
+                match = ''
+        return matches
 
+print(Exercises.exercise_ten("() (( ( )() ( )) ) ( ())"))
 
 
 
