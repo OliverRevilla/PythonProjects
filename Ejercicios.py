@@ -1,8 +1,3 @@
-
-
-from ast import Return
-
-
 class Exercises:
     def __init__(self):
         pass
@@ -21,19 +16,51 @@ class Exercises:
         lista = [range(number, number*2)]
         return (reduce(lambda x: x + 2, lista))
 
+#Write a Python program to check the nth-1 string is a proper substring 
+#of nth string in a given list of strings
 
-"""
-Write a Python program to check the nth-1 string is a proper substring 
-of nth string in a given list of strings
-"""
-    def 
+    def exercise_five(string_list):
+        # to know if one substring is inside of another one it use in function
+        return string_list[-2] in string_list[-1]
+
+#Write a Python program to test a list of one hundred integers between 0 and 999,
+#which all differ by ten from one another. Return true or false.
+    
+    def exercise_six(numbers):
+        last_element = numbers[0]
+        if len(numbers < 100):
+            return False
+        else:
+            for pos in range(1, len(numbers)):
+                if last_element + 10 == numbers[pos]:
+                    last_element = numbers[pos]
+                else:
+                    return False
+
+        return True
+
+# Write a python program to check a given list of integers where
+# the sum of the first i integers is i.
+    def exercise_seven(numbers):
+        return numbers[0] == 1
+
+#Write a Python program to split a string of words separated by commas
+# and spaces into two lists, words and separators.
+    def exercise_eight(string_list):
+        import re
+        c = []
+        d = re.split(r"([ ,]+)", string_list)
+        for word in string_list:
+            if word in (' ',',','," "'):
+                c.append(word)
+        for word in d:
+            if word in (' ',','):
+                d.remove(word)
+        print([d,c])
 
 
+Exercises.exercise_eight("The dance, held in the school gym, ended at midnight.")
 
-
-
-
-            
 
 
 
